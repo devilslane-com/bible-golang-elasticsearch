@@ -1,0 +1,22 @@
+{
+    "query": {
+      "bool": {
+        "should": [
+          {
+            "match": {
+              "en": {
+                "query": "eagle",
+                "fuzziness": "AUTO"
+              }
+            }
+          },
+          {
+            "match_phrase": {
+              "en": "eagle"
+            }
+          }
+        ],
+        "minimum_should_match": 1
+      }
+    }
+  }

@@ -1,0 +1,50 @@
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "english_stop": {
+          "type": "stop",
+          "stopwords": "_english_"
+        },
+        "english_stemmer": {
+          "type": "stemmer",
+          "language": "english"
+        },
+        "edge_ngram_filter": {
+          "type": "edge_ngram",
+          "min_gram": 3,
+          "max_gram": 20
+        }
+      },
+      "analyzer": {
+        "bible_custom_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "edge_ngram_filter",
+            "english_stop",
+            "english_stemmer"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "book": {
+        "type": "keyword"
+      },
+      "chapter": {
+        "type": "integer"
+      },
+      "verse": {
+        "type": "integer"
+      },
+      "en": {
+        "type": "text",
+        "analyzer": "bible_custom_analyzer"
+      }
+    }
+  }
+}
