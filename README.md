@@ -1,4 +1,6 @@
-# Elasticsearch Primer
+# Elasticsearch Bible Query Using Go
+
+Using data from https://github.com/thiagobodruk/bible (thank you!!)
 
 ## Library
 
