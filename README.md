@@ -1,6 +1,7 @@
 # Elasticsearch Bible Query Using Go
 
-Using data from https://github.com/thiagobodruk/bible (thank you!!)
+- Uses data from https://github.com/thiagobodruk/bible (thank you!!)
+- Browse Elasticsearch with https://elasticvue.com/
 
 ## Library
 
@@ -17,9 +18,9 @@ Next, create the index with a `PUT` request found in `resources/index/create_ind
 
 ## Import
 
-### Build the importer
+![](elasticvue.png)
 
-Add the ES connection details and *password* for connecting to `https://localhost:9200`.
+### Build the importer
 
 ```bash
 cd src/elasticbible/import
@@ -53,15 +54,10 @@ export ES_USERNAME=elastic
 export ES_PASSWORD=somepassword
 export MAX_RESULTS=20
 ```
-
-```bash
-cd bin/
-./search -host="https://localhost:9200"  -index="bible" -username="elastic" -password="somepassword" -text="adam" -max=30
-```
-
 Command:
 
 ```bash
+cd bin/
 ./search -host="https://localhost:9200"  -index="bible" -username="elastic" -password="somepassword" 
 -text="lion" -max=10
 ```
